@@ -54,11 +54,12 @@ Given a query that matches no listings, the agent stops before calling
      compares session["selected_item"] against what actually reached
      suggest_outfit is the shape you're after. -->
 
+Given a successful query, the state of the application is consistent across tool calls in 4 out 5 cases.
 
 
 **Why this target:**
 
-
+The model may hallucinate or deviate from the expected answer in a single session. Tracking the state across the application lifecycle is crucial to prevent incorrect fit cards from being served to the user.
 
 ---
 
@@ -76,10 +77,12 @@ Given a query that matches no listings, the agent stops before calling
      be turned into a number. -->
 
 
+Given a query match the application returns a fit card with all fields populated and reflect the ground truth of the source data in 4 out of 5 cases.
 
 **Why this target:**
 
 
+It is not enought to return a succesful item match to a given query. The data reference must be accurate and reflect our source data to suggest the right fit and style of an existing product to the customer.
 
 ---
 
@@ -92,11 +95,11 @@ Given a query that matches no listings, the agent stops before calling
      search respects a price ceiling — anything, as long as it names a number
      or an observable outcome. -->
 
-
+Aplication is responsive to user queries, returning a result within 3 seconds
 
 **Why this target:**
 
-
+A customer's time is valuable, the faster they can get relevant reply from the applicaiton the faster they can make a decision for the next step (comparing fit cards, adding items to cart, sharing, purchasing, etc.). A slow or non-responsive application will encourage the user to leave and try and competing application.
 
 ---
 
